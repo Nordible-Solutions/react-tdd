@@ -7,9 +7,9 @@ class ProductList extends Component {
             <ul>
                 {
                     this.props.products.map(product => (
-                        <li onClick={() => this.props.onProductSelect(product)} key={product.id}>
-                            {product.name} {product.brand}
-                        </li>
+                        <li key={product.id} onClick={(evt) => this.props.onProductSelect(product)}>
+                            {product.name} ({product.brand})
+              </li>
                     ))
                 }
             </ul>
