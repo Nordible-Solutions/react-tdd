@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { expect } from 'chai';
+//import { expect } from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -16,7 +16,7 @@ describe('App component testing', () => {
 
   it('App should display My product store on page', () => {
     const wrapper = shallow(<App/>);
-    const welcome = <h1>My product store</h1>;
-    expect(wrapper.contains(welcome)).to.equal(true);
+    const myProductStore = <h1>My product store</h1>;
+    expect(wrapper.contains(myProductStore)).toEqual(true);
   });
 });

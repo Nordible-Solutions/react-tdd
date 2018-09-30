@@ -6,11 +6,11 @@ class ProductList extends Component {
         return (
             <ul>
                 {
-                    this.props.products.map(product => {
-                        <li key={product.id}>
-                            {product.name}
+                    this.props.products.map(product => (
+                        <li onClick={() => this.props.onProductSelect(product)} key={product.id}>
+                            {product.name} {product.brand}
                         </li>
-                    })
+                    ))
                 }
             </ul>
         )
@@ -18,7 +18,8 @@ class ProductList extends Component {
 }
 
 ProductList.propTypes = {
-    products: PropTypes.array.isRequired
+    products: PropTypes.array.isRequired,
+    onProductSelect: PropTypes.func.isRequired
 };
 
 export default ProductList;
